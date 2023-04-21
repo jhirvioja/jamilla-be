@@ -11,7 +11,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins",
         builder =>
         {
-            builder.WithOrigins("http://localhost:3000", "https://localhost:3000")
+            builder.WithOrigins("http://localhost:3000",
+                "https://localhost:3000",
+                "http://jamilla.azurewebsites.net/," +
+                "https://jamilla.azurewebsites.net/")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
